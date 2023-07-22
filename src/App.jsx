@@ -8,11 +8,13 @@ const App = () => {
   return (
     <>
       <Header />
+      <div className='container py-4'>
         <Routes>
           <Route path='/' element={<WatchList />} />
           <Route path='/watched' element={<Watched />} />
           <Route path='/add' element={<Add />} />
         </Routes>
+      </div>
     </>
   );
 };
