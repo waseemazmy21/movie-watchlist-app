@@ -30,7 +30,7 @@ const Header = () => {
   function toggleTheme() {
     setTheme((prevTheme) => {
       return prevTheme === 'light' ? 'night' : 'light';
-    })
+    });
   }
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Header = () => {
 
       {/* navbar */}
       <div className='drawer-content navbar justify-between px-4 md:px-6 bg-base-200'>
-        <Link to='/' className='text-3xl'>
+        <Link to='/' className='text-3xl font-bold'>
           Movies
         </Link>
 
