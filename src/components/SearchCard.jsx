@@ -3,7 +3,15 @@ import useGlobalContext from '../context/useGlobalContext';
 import ACTIONS from '../context/actions';
 
 const SearchCard = ({ movie }) => {
-  const { dispatch } = useGlobalContext();
+  const { dispatch, watchlist, watched } = useGlobalContext();
+
+  const isInWatchlist = watchlist.find((m) => m.imdbID === movie.imdbID)
+    ? true
+    : false;
+
+  const isInWatched = watched.find((m) => m.imdbID === movie.imdbID)
+    ? true
+    : false;
 
   return (
     <div className='flex flex-col bg-base-100 shadow-xl rounded-md overflow-hidden'>
@@ -15,8 +23,8 @@ const SearchCard = ({ movie }) => {
         />
       </figure>
       <div className='flex-1 flex flex-col p-4'>
-        <h2 className='text-xl mb-2'>{movie.Title}</h2>
-        <p className='text-sm mb-4'>{movie.Year}</p>
+        <h2 className='text-2xl font-bold mb-2'>{movie.Title}</h2>
+        <p className='text-sm text-slate-500 mb-4'>{movie.Year}</p>
         <div className=' grid grid-cols-[1fr_1fr] gap-1 mt-auto'>
           <button
             onClick={() => {
@@ -27,6 +35,7 @@ const SearchCard = ({ movie }) => {
                 },
               });
             }}
+            disabled={isInWatchlist}
             className='btn'
           >
             Add to WatchList
@@ -40,6 +49,7 @@ const SearchCard = ({ movie }) => {
                 },
               });
             }}
+            disabled={isInWatched}
             className='btn'
           >
             Add to Watched

@@ -6,7 +6,7 @@ function reducer(state, action) {
       return {
         watchlist: [...state.watchlist, action.payload.movie],
         watched: state.watched.filter(
-          (movie) => movie.imdbId !== action.payload.movie.imdbId
+          (movie) => movie.imdbID !== action.payload.movie.imdbID
         ),
       };
 
@@ -14,14 +14,14 @@ function reducer(state, action) {
       return {
         ...state,
         watchlist: state.watchlist.filter(
-          (movie) => movie.imdbId !== action.payload.movie.imdbId
+          (movie) => movie.imdbID !== action.payload.movie.imdbID
         ),
       };
 
     case ACTIONS.ADD_MOVIE_TO_WATCHED:
       return {
         watchlist: state.watchlist.filter(
-          (movie) => movie.imdbId !== action.payload.movie.imdbId
+          (movie) => movie.imdbID !== action.payload.movie.imdbID
         ),
         watched: [...state.watched, action.payload.movie],
       };
@@ -30,7 +30,7 @@ function reducer(state, action) {
       return {
         ...state,
         watched: state.watched.filter(
-          (movie) => movie.imdbId !== action.payload.movie.imdbId
+          (movie) => movie.imdbID !== action.payload.movie.imdbID
         ),
       };
   }
