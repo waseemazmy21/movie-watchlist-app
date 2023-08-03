@@ -11,9 +11,9 @@ const App = () => {
       <Header />
       <div className='container py-4'>
         <Routes>
-          <Route path='/' element={<Watchlist />} />
-          <Route path='/watched' element={<Watched />} />
-          <Route path='/add' element={<Add />} />
+          <Route exact path='/' element={<Watchlist />} />
+          <Route exact path='/watched' element={<Watched />} />
+          <Route exact path='/add' element={<Add />} />
         </Routes>
       </div>
     </ContextProvider>
