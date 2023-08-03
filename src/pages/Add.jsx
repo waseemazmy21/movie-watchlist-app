@@ -11,7 +11,7 @@ const Add = () => {
     async function getMovies() {
       try {
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`
+          `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`
         );
         const data = await res.json();
         if (data.Search) {
