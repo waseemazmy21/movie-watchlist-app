@@ -11,7 +11,9 @@ const Add = () => {
     async function getMovies() {
       try {
         const res = await fetch(
-          `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`
+          `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search
+            .trim()
+            .toLowerCase()}`
         );
         const data = await res.json();
         if (data.Search) {
@@ -34,6 +36,7 @@ const Add = () => {
     <div className='flex flex-col gap-8'>
       <input
         type='text'
+        maxLength={20}
         placeholder='Type a movie name'
         className='input input-bordered input-lg w-full'
         value={search}
@@ -53,13 +56,13 @@ const Add = () => {
           })}
       </div>
       {movies.length === 0 && search.length !== 0 && !error && (
-        <h2 className='text-4xl italic text-slate-500  text-center max-w-md mx-auto'>
+        <h2 className='text-4xl italic text-slate-500  text-center max-w-[80%] sm:max-w-md mx-auto break-words'>
           There is no movie with a title {search}
         </h2>
       )}
 
       {error && search.length !== 0 && (
-        <h2 className='text-4xl italic text-slate-500  text-center max-w-md mx-auto'>
+        <h2 className='text-4xl italic text-slate-500  text-center max-w-[80%] sm:max-w-md mx-auto'>
           Something went wrong, please try again.
         </h2>
       )}
