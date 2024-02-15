@@ -4,10 +4,6 @@
 
 [Live Site](https://waseemazmy21.github.io/movie-watchlist-app/)
 
-## Description
-
-The Movie Watchlist App is a user-friendly web application that allows users to search for movies, view important details like posters and release dates, and organize their watchlist. It features a sleek and responsive design, making it easy to track your favorite films. The project is built with React, utilizing the power of Vite for fast development and Tailwind CSS for stylish UI components. The app also offers a convenient dark mode for enhanced viewing comfort.
-
 ## Technologies and Tools
 
 - React: Building dynamic user interfaces.
@@ -28,5 +24,3 @@ For production:
 
 1. Build the project: `npm run build`
 2. Preview the production build: `npm run preview`
-
-Enjoy managing your movie watchlist with the Movie Watchlist App!
