@@ -15,7 +15,7 @@
 
 To get started, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/yourusername/movie-watchlist-app.git`
+1. Clone the repository: `git clone https://github.com/waseemazmy21/movie-watchlist-app`
 2. Install dependencies: `npm install`
 3. Run the development server: `npm run dev`
 4. Open your browser and navigate to `http://localhost:3000`
